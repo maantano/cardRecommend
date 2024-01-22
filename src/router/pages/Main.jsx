@@ -86,7 +86,7 @@ const Main = () => {
   async function cardCorpList() {
     try {
       const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/cardCorporationList`
+        `http://${process.env.REACT_APP_HOST}/api/cardCorporationList`
       );
       setCorporationCList(response.data);
     } catch (error) {
