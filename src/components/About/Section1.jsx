@@ -17,11 +17,14 @@ export const asyncUpFetch = createAsyncThunk(
   "filter/asyncUpFetch",
   async ({ checkedList, cardType, refresh }) => {
     try {
-      const response = await Axios.post("/api/categoryCount", {
-        checkedList,
-        cardType,
-        refresh,
-      });
+      const response = await Axios.post(
+        `${process.env.REACT_APP_HOST}/api/categoryCount`,
+        {
+          checkedList,
+          cardType,
+          refresh,
+        }
+      );
       return response.data;
     } catch (e) {
       console.log("asyncUpFetch ERROR 데이터를 받아올 수 없습니다.");
@@ -40,9 +43,11 @@ const Section1 = ({ setExpand, allChkStatus, setAllChkStatus, getcardAll }) => {
 
   const getcardBenefit = async () => {
     try {
-      await Axios.get("/api/cardBenefit").then((response) => {
-        setRes(response.data);
-      });
+      await Axios.get(`${process.env.REACT_APP_HOST}/api/cardBenefit`).then(
+        (response) => {
+          setRes(response.data);
+        }
+      );
     } catch (e) {
       console.log("getcardBenefit ERROR 데이터를 받아올 수 없습니다.");
     }

@@ -1,10 +1,10 @@
-const BASE_URL = "https://api.coinpaprika.com/v1";
+const BASE_URL = "https:/.coinpaprika.com/v1";
 
 export const fetchCoins = () => {
   // export const fetchCoins = async () => {
   //async  await 방법
   //   const response = await (
-  //     await fetch(`https://api.coinpaprika.com/v1/coins/${coinId}`)
+  //     await fetch(`https:/.coinpaprika.com/v1/coins/${coinId}`)
   //   ).json();
   //   return response;
 
@@ -22,15 +22,15 @@ export const fetchSearchList = () => {
   // export const fetchCoins = async () => {
   //async  await 방법
   //   const response = await (
-  //     await fetch(`https://api.coinpaprika.com/v1/coins/${coinId}`)
+  //     await fetch(`https:/.coinpaprika.com/v1/coins/${coinId}`)
   //   ).json();
   //   return response;
 
   //promise 방법
-  return fetch(`/api/search/cardList`).then((response) => response.json());
+  return fetch(`/search/cardList`).then((response) => response.json());
 };
 
 export async function companyApi() {
-  const response = await fetch("/api/company");
+  const response = await fetch("/company");
   return response.json();
 }

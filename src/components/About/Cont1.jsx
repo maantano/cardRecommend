@@ -39,7 +39,7 @@ const Cont1 = () => {
 
   const getcardAll = async () => {
     try {
-      await Axios.get("/api/cardAll").then((response) => {
+      await Axios.get("/cardAll").then((response) => {
         setCont1Res(response.data);
       });
     } catch (e) {
@@ -254,7 +254,7 @@ const Cont1 = () => {
                         <div data-v-0a0e3ee1="">
                           <img
                             data-v-0a0e3ee1=""
-                            src="https://api.card-gorilla.com:8080/storage/display/4265/pc_img/29608/zgm.%EA%B3%A0%ED%96%A5%EC%9C%BC%EB%A1%9C_bottom_pc_900x300.jpg"
+                            src="https:/.card-gorilla.com:8080/storage/display/4265/pc_img/29608/zgm.%EA%B3%A0%ED%96%A5%EC%9C%BC%EB%A1%9C_bottom_pc_900x300.jpg"
                             style={{ width: "auto", height: "300px" }}
                             alt=""
                           />
