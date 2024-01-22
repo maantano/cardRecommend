@@ -452,7 +452,7 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <div className="cardCopContainer">
+      {/* <div className="cardCopContainer">
         <h1
           className=""
           style={{
@@ -468,7 +468,6 @@ const Main = () => {
           카드사별 카드 보기
         </h1>
         <div className="cardContainer2">
-          {/* cardCorpListDone ==== {cardCorpListDone ? "true" : "false"} */}
           {corporationCList.map((item) => {
             return (
               <div
@@ -486,7 +485,7 @@ const Main = () => {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
