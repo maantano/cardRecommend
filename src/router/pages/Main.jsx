@@ -41,6 +41,7 @@ const Main = () => {
 
   // firebase 마이그레이션 randomCard ========================================================
   async function randomCard() {
+    console.log("process.env.REACT_APP_HOST ===>", process.env.REACT_APP_HOST);
     try {
       const response = await Axios.post(
         `${process.env.REACT_APP_HOST}/api/randomCard`
