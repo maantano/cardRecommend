@@ -1,0 +1,174 @@
+.searchSetting .step .part[data-v-2c2d8c87] {
+  position: relative;
+  padding: 20px 0 40px;
+}
+.searchSetting .step .txt2[data-v-2c2d8c87] {
+  font-size: 16px;
+  font-weight: 400;
+  /* color: #4a9d52; */
+  color: rgba(19, 107, 194, 0.9);
+
+  line-height: 1.6em;
+  padding: 16px;
+  margin-bottom: 40px;
+  background: rgba(48, 147, 247, 0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+.searchSetting .step .txt[data-v-2c2d8c87] {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1em;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+.searchSetting .step .txt i[data-v-2c2d8c87] {
+  font-size: 12px;
+  font-weight: 500;
+  color: #cfc7b8;
+  margin-left: 10px;
+  padding: 3px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5em;
+}
+.searchSetting .step .btnGroup[data-v-2c2d8c87] {
+  /* display: block; */
+  font-size: 0;
+}
+.searchSetting .step .benefit .btnGroup li[data-v-2c2d8c87] {
+  margin: 0 10px 10px 0;
+  width: calc((100% - 10px) / 2);
+}
+.searchSetting .step .btnGroup li[data-v-2c2d8c87] {
+  display: inline-block;
+  width: 375px;
+  margin-right: 10px;
+}
+.searchSetting .step .benefit .btnGroup .btn_lineBlue[data-v-2c2d8c87] {
+  display: inline-block;
+  text-align: center;
+  line-height: 1em;
+  padding: 24px 20px;
+  border-width: 1px;
+  letter-spacing: 0;
+}
+.searchSetting .step .btnGroup .btn_lineBlue.on[data-v-2c2d8c87] {
+  background: #fff;
+  border: 1px solid #000;
+  z-index: 1;
+}
+.searchSetting .step .btnGroup .btn_lineBlue[data-v-2c2d8c87] {
+  height: 60px;
+  box-shadow: none;
+  border-radius: 12px !important;
+  background: #f5f5f5;
+}
+.searchSetting .step .benefit .btnGroup .btn_lineBlue.on i[data-v-2c2d8c87] {
+  font-weight: 700;
+  color: #000;
+}
+.searchSetting .step .benefit .btnGroup .btn_lineBlue i[data-v-2c2d8c87] {
+  line-height: 1em;
+  font-size: 16px;
+  font-weight: 400;
+}
+.searchSetting
+  .step
+  .benefit
+  .btnGroup
+  .btn_lineBlue.on
+  i[data-v-2c2d8c87]:before {
+  background-position: center -32px;
+}
+
+.searchSetting
+  .step
+  .benefit
+  .btnGroup
+  .btn_lineBlue
+  i[data-v-2c2d8c87]:before {
+  background-image: none;
+  background-size: 0;
+  padding-right: 5px;
+  content: "";
+}
+.searchSetting .step .benefit .btnGroup .s4_01 i[data-v-2c2d8c87]:before {
+  content: "💰";
+}
+
+.searchSetting .step .benefit .btnGroup .s4_02 i[data-v-2c2d8c87]::before {
+  content: "💳";
+}
+.searchSetting .step .benefit .btnGroup .s4_03 i[data-v-2c2d8c87]::before {
+  content: "🎁";
+}
+
+.searchSetting .step .part.last[data-v-2c2d8c87] {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.searchSetting .step .part[data-v-2c2d8c87] {
+  position: relative;
+  padding: 20px 0 40px;
+}
+.searchSetting .step .txt[data-v-2c2d8c87] {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1em;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+.searchSetting .step .company_box[data-v-2c2d8c87] {
+  text-align: left;
+}
+.searchSetting .step .last[data-v-2c2d8c87]:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.searchSetting .step .company_box li.checked[data-v-2c2d8c87] {
+  font-weight: 700;
+  background: #fff;
+  border: 1px solid #000;
+}
+.searchSetting .step .company_box li[data-v-2c2d8c87] {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1em;
+  padding: 15px 20px 15px 34px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  margin: 0 10px 10px 0;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+.searchSetting .step .company_box li.checked[data-v-2c2d8c87]:before {
+  content: "";
+  background: url("https://www.card-gorilla.com/statics/img/icon_check_v.png");
+  background-size: 100%;
+  display: inline-block;
+  width: 11px;
+  height: 8px;
+  position: absolute;
+  margin-left: -16px;
+  margin-top: 5px;
+  -webkit-filter: hue-rotate(28deg) brightness(1.1) contrast(1.85);
+  filter: hue-rotate(28deg) brightness(1.1) contrast(1.85);
+}
+.searchSetting .step .company_box li[data-v-2c2d8c87]:before {
+  content: "";
+  background: url("https://www.card-gorilla.com/statics/img/icon_check_v.png");
+  background-size: 100%;
+  display: inline-block;
+  width: 11px;
+  height: 8px;
+  position: absolute;
+  margin-left: -16px;
+  margin-top: 5px;
+  -webkit-filter: grayscale(1) brightness(1.4);
+  filter: grayscale(1) brightness(1.4);
+}

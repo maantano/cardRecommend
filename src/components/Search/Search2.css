@@ -1,0 +1,566 @@
+.ad {
+  position: relative;
+}
+
+.q-carousel {
+  background-color: inherit;
+  height: 400px;
+}
+.q-panel-parent {
+  overflow: hidden;
+  position: relative;
+}
+.text-center {
+  text-align: center;
+}
+.q-carousel {
+  background-color: inherit;
+  height: 400px;
+}
+.q-panel-parent {
+  overflow: hidden;
+  position: relative;
+}
+.q-carousel__slides-container {
+  height: 100%;
+}
+
+.rightArea .ad .full-height .q-carousel {
+  margin-bottom: 30px;
+}
+
+.scroll {
+  overflow: hidden !important;
+}
+.scroll,
+.scroll-x,
+.scroll-y {
+  -webkit-overflow-scrolling: touch;
+  will-change: scroll-position;
+}
+.ad a {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.q-panel,
+.q-panel > div {
+  height: 100%;
+  width: 100%;
+}
+.q-panel,
+.q-panel > div {
+  height: 100%;
+  width: 100%;
+}
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.text-center {
+  text-align: center;
+}
+.fit,
+.full-height {
+  height: 100% !important;
+}
+.full-width {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.relative-position {
+  position: relative;
+}
+.q-carousel__slide {
+  height: 100%;
+  padding: 16px;
+  background-size: cover;
+  background-position: 50%;
+}
+
+a {
+  cursor: pointer;
+}
+
+.fit,
+.full-height {
+  height: 100% !important;
+}
+.form-control,
+a,
+button,
+input,
+select,
+textarea {
+  outline: 0 !important;
+  box-shadow: none;
+  background-color: unset;
+  -ms-background-color: none;
+}
+a,
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+  vertical-align: top;
+}
+.ad a .full-width a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.right_area .rgt_lst {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+}
+.rgt_lst.event {
+  margin-top: 30px;
+  border-radius: 40px;
+  background: #8cde94;
+  position: relative;
+}
+.rgt_lst.event:before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  background: #000;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 40px;
+}
+.rgt_lst.event .title p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  letter-spacing: -0.03em;
+  line-height: 1.3em;
+  text-align: left;
+  position: relative;
+  padding: 0 0 0 60px;
+  margin-bottom: 20px;
+  overflow: visible;
+}
+.rgt_lst.event .title p strong {
+  font-size: 24px;
+  font-weight: 800;
+}
+.rgt_lst.event .title p:before {
+  content: "";
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background-image: url(https://api.card-gorilla.com:8080/storage/corp/2/tips/29197/tips_img_promo.png);
+  background-position: 50%;
+  background-size: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+.rgt_lst.event .pro_wrap {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 20px 25px 20px;
+  border-radius: 30px;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+.rgt_lst.event .display-container a {
+  width: 100%;
+}
+.rgt_lst.event .event_ctnr {
+  display: table;
+  vertical-align: middle;
+  width: 100%;
+  padding: 25px 0 25px 90px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.rgt_lst.event .event_ctnr:before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background: #eee;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.rgt_lst.event .event_ctnr .plate {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #f5f5f5;
+  border-radius: 100%;
+}
+
+.rgt_lst.event .event_ctnr .plate img {
+  max-width: 60px;
+  max-height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rgt_lst.event .event_ctnr .company {
+  font-size: 15px;
+  font-weight: 400;
+  color: #888;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  line-height: 1em;
+  text-align: left;
+}
+.rgt_lst.event .event_ctnr .benefit {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: -0.03em;
+  line-height: 1em;
+  text-align: left;
+  transition: 0.15s;
+}
+.rgt_lst.event .event_ctnr:after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: solid #ccc;
+  border-width: 2px 2px 0 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%) rotate(45deg);
+  transition: 0.15s;
+}
+.rgt_lst.event .btn_more a {
+  display: block;
+  width: 92%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #282828;
+  letter-spacing: -0.01em;
+  padding: 14px;
+  background: #eee;
+  border-radius: 5em;
+  margin-top: 5px;
+}
+.rgt_lst.event .btn_more a:hover {
+  background-color: #ddd;
+}
+.right_area .rgt_lst.popular_contents[data-v-734f3b6c] {
+  padding-bottom: 15px;
+}
+.right_area .rgt_lst[data-v-734f3b6c] {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+}
+.right_area .popular_contents .lst {
+  margin-top: 20px;
+}
+.right_area .popular_contents .lst li {
+  position: relative;
+}
+.text-left {
+  text-align: left;
+}
+
+.right_area .popular_contents .lst a {
+  /* position: relative;
+  display: table;
+  width: 100%;
+  height: 130px;
+  padding: 15px 0 15px 120px; */
+}
+.right_area .popular_contents .lst a .img {
+  position: absolute;
+  left: 0;
+  top: 15px;
+}
+
+.right_area .popular_contents .lst a .img img {
+  border-radius: 12px;
+}
+.right_area .popular_contents .lst a .txt {
+  display: table-cell;
+  vertical-align: middle;
+}
+.right_area .popular_contents .lst a .s_tit {
+  line-height: 20px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #888;
+}
+
+.right_area .popular_contents .lst a .tit {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: -0.01em;
+  line-height: 1.45em;
+  transition: all 0.15s;
+}
+
+.right_area .popular_contents .lst li:after {
+  content: "";
+  display: inline-block;
+  width: 170px;
+  height: 1px;
+  background: #eee;
+  position: absolute;
+  left: 120px;
+  bottom: 0;
+}
+.right_area .popular_contents .lst a:hover .tit {
+  color: #ffa800;
+}
+.ad_bottom[data-v-8f15a340] {
+  clear: both;
+  padding-top: 120px;
+  text-align: center;
+}
+.ad_bottom[data-v-7444ac99] {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.right_area .card_02 {
+  display: inline-block;
+  max-width: 450px;
+  max-height: 100px;
+  margin: 0 10px 10px 0;
+  background-color: #fff;
+  overflow: hidden;
+  /* position: relative; */
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.right_area .card_02 a[data-v-f9f941ec]:before {
+  background-color: #000;
+}
+.right_area .card_02 a[data-v-f9f941ec]:before {
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  opacity: 0;
+}
+.right_area .card_02 a .plate[data-v-f9f941ec] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.right_area .card_02 div .plate[data-v-f9f941ec] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.right_area div.card_02 .plate[data-v-f9f941ec]:before {
+  padding: 20px 20px;
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/2/tips/28208/tips_company_sh.png");
+}
+.right_area div.card_02[data-v-f9f941ec] {
+  background: linear-gradient(180deg, #e6effd, #d8e4f0);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f22222]:before {
+  padding: 20px 20px;
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/2/tips/28338/tips_company_kb.png");
+}
+.right_area div.card_02[data-v-f9f22222] {
+  background: linear-gradient(180deg, #fef4d9, #f9e9bf);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f33333]:before {
+  padding: 20px 20px;
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/2/tips/29182/tips_company_hn.png");
+}
+.right_area div.card_02[data-v-f9f33333] {
+  background: linear-gradient(180deg, #ddeaf4, #d7e1ee);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f44444]:before {
+  padding: 20px 20px;
+  background-image: url("https://api6.card-gorilla.com:8080/storage/corp/2/tips/23056/tips_company_nh.png");
+}
+.right_area div.card_02[data-v-f9f44444] {
+  background: linear-gradient(180deg, #e9e9e9, #e1e1e1);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f55555]:before {
+  padding: 20px 20px;
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/2/tips/29036/tips_company_hd.png");
+}
+.right_area div.card_02[data-v-f9f55555] {
+  background: linear-gradient(180deg, #deebf6, #d5e1ed);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f66666]:before {
+  padding: 20px 20px;
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/2/tips/28339/tips_company_ss.png");
+}
+.right_area div.card_02[data-v-f9f66666] {
+  background: linear-gradient(180deg, #daf2f0, #c9edeb);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f77777]:before {
+  padding: 20px 20px;
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/7/tips/26919/tips_company_lt.png");
+}
+.right_area div.card_02[data-v-f9f77777] {
+  background: linear-gradient(180deg, #e1f3f7, #cae6ee);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f88888]:before {
+  padding: 20px 20px;
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/2/tips/25076/tips_company_wr.png");
+}
+.right_area div.card_02[data-v-f9f88888] {
+  background: linear-gradient(180deg, #ddeaf4, #d7e1ee);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f99999]:before {
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/2/tips/29545/tips_company_ibk.png");
+
+  padding: 20px 20px;
+}
+.right_area div.card_02[data-v-f9f99999] {
+  background: linear-gradient(180deg, #e8eaec, #d7dade);
+  width: 100%;
+  height: 90px;
+}
+.right_area div.card_02 .plate[data-v-f9f101010]:before {
+  background-image: url("https://api.card-gorilla.com:8080/storage/corp/2/tips/25450/tips_company_bc.png");
+
+  padding: 20px 20px;
+}
+
+.right_area div.card_02[data-v-f9f101010] {
+  background: linear-gradient(180deg, #fde7ec, #fcdae1);
+  width: 100%;
+  height: 90px;
+}
+.right_area .card_02 .plate:before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  top: 50%;
+  right: -64px;
+  transform: translate(-41%, -55%);
+  border-radius: 5px;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+/* .right_area .card_02 .plate[data-v-f9f22222]:before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 60%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100%;
+  top: 50%;
+  right: -64px;
+  transform: translate(-31%, -55%);
+  border-radius: 5px;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+} */
+
+.right_area .card_02 div .logo img[data-v-f9f941ec] {
+  opacity: 1;
+  height: 60px;
+  margin: 5px 20px;
+}
+.right_area .card_02 .name_kr[data-v-f9f941ec] {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  letter-spacing: -0.03em;
+  z-index: 2;
+  display: block;
+  margin: -20px 35px;
+}
+
+.right_area .card_02 .name_en[data-v-f9f941ec] {
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+  margin-left: 2px;
+  display: none;
+}
+
+.right_area .card_02 .plus[data-v-f9f941ec] {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.75;
+  display: none;
+}
+
+.right_area .card_02 a[data-v-f9f941ec]:after {
+  border-color: #183179;
+}
+.right_area .card_02 a[data-v-f9f941ec]:after {
+  width: 100%;
+  border: 3px solid #eee;
+  opacity: 0;
+  border-radius: 11px;
+}
+.right_area .card_02 a[data-v-f9f941ec]:after,
+.right_area .card_02 a[data-v-f9f941ec]:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  content: "";
+  transition: all 0.15s;
+}

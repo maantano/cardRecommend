@@ -1,0 +1,42 @@
+/* Xlsx.css */
+
+/* 스타일 추가 */
+body {
+  font-family: Arial, sans-serif;
+}
+input[type="file"] {
+  margin-top: 10px;
+}
+
+.data-table,
+.target-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.data-table th,
+.data-table td,
+.target-table th,
+.target-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th,
+.target-table th {
+  background-color: #f2f2f2;
+}
+
+.selected {
+  background-color: #d3d3d3;
+}
+
+.drop-target {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+}

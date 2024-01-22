@@ -1,0 +1,14 @@
+.filterContainer {
+  margin-right: 45px;
+  width: 100%;
+}
+.filterTtitle {
+  display: block;
+  font-size: 13px;
+  color: #000;
+  font-weight: 500;
+}
+
+.firstF span {
+  font-size: 10px;
+}

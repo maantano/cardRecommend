@@ -1,0 +1,18 @@
+.firstDiv {
+  width: 100%;
+  vertical-align: top;
+  display: inline-flex;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.aaa {
+  line-height: 1.57143;
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  color: #1d1d1f;
+  text-align: center;
+  white-space: nowrap;
+}

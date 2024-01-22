@@ -1,0 +1,57 @@
+.mv {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh + 1px);
+  background-image: url(https://static.toss.im/assets/homepage/team/kv-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.mvText {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 247px;
+  text-align: center;
+}
+.mvDivSpan {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.mvSpan {
+  font-size: 72px;
+  font-style: normal;
+  font-weight: bold;
+  font-stretch: normal;
+  line-height: 93.6px;
+  color: #ffffff;
+  letter-spacing: normal;
+  word-break: keep-all;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+.arrow {
+  position: absolute;
+  bottom: 97px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@keyframes updown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+}
+
+.arrImg {
+  width: 28px;
+  height: auto;
+  cursor: pointer;
+  animation: updown 1s ease-in Infinite Alternate;
+}

@@ -1,0 +1,138 @@
+.table-container {
+  margin-bottom: 20px;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.styled-table th {
+  background-color: #f2f2f2;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.styled-table tr:hover {
+  background-color: #e0e0e0;
+}
+
+.pieChartBox2 {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  width: 550px;
+  height: 500px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: #ffffff;
+  z-index: 0;
+}
+
+.pieChartBox2 {
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
+}
+
+.pieChartBox2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chartContainer {
+  opacity: 0;
+}
+
+.chartContainer.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.css-1lwf0h3 {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.css-gcwfoh {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.css-1klp09s {
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+.css-m59ogo {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  margin-left: 8px;
+}
+.css-m22ruf {
+  border: 1px solid var(--adaptiveGrey200);
+  height: 300px;
+  width: 1px;
+  margin: 0px 80px;
+}
+.guideDiv {
+  margin-left: 20px;
+}
+.guideFile {
+  display: inline-block;
+  color: #999;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  font-size: 12px;
+  /* animation: updown 1s ease-in Infinite Alternate; */
+}

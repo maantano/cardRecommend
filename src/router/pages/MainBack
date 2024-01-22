@@ -1,0 +1,589 @@
+import React, { useState, useEffect, useRef } from "react";
+import "./Main.css";
+import { Link } from "react-router-dom";
+
+import Axios from "axios";
+const Main = () => {
+  const [currentText, setCurrentText] = useState("");
+  const targetText = "Make your own card";
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [showWebVisual, setShowWebVisual] = useState(false);
+  const [webVisualOffset, setWebVisualOffset] = useState(0);
+  const [isMouseOver, setIsMouseOver] = useState(false);
+  const [webVisualOpacity, setWebVisualOpacity] = useState(0);
+  const [webVisualAnimated, setWebVisualAnimated] = useState(false);
+  const [showRgtTitle, setShowRgtTitle] = useState(false);
+  const [showWebVisualAnimated, setShowWebVisualAnimated] = useState(false);
+
+  const [randomC, setRandC] = useState([]);
+  const containerRef = useRef(null);
+  const scrollDuration = 10000; // 자동 슬라이드 지속 시간 (10초)
+  const stepSize = 320; // 한 번에 이동할 픽셀 수
+  const initialScrollLeft = 0;
+
+  async function randomCard() {
+    try {
+      const response = await Axios.post("/api/randomCard");
+      setRandC(response.data);
+    } catch (error) {
+      console.error("API Error:", error.message);
+      throw error;
+    }
+  }
+
+  useEffect(() => {
+    console.log("1234");
+    const container = containerRef.current;
+    if (container) {
+      const scrollDuration = 10000; // 자동 슬라이드 지속 시간 (10초)
+      const stepSize = 320; // 한 번에 이동할 픽셀 수
+      let scrollPosition = 0;
+
+      const slide = () => {
+        scrollPosition += stepSize;
+        if (scrollPosition >= container.scrollWidth) {
+          // 마지막 요소에 도달하면 초기 위치로 돌아갑니다.
+          scrollPosition = 0;
+        }
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+      };
+
+      const intervalId = setInterval(slide, scrollDuration);
+
+      return () => {
+        clearInterval(intervalId);
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    randomCard();
+  }, []);
+
+  const [imageClassMap, setImageClassMap] = useState({});
+  const [initialRender, setInitialRender] = useState(true);
+
+  // const initialScrollLeft = 0;
+  // useEffect(() => {
+  //   let charIndex = 0;
+  //   const interval = setInterval(() => {
+  //     setCurrentText((prevText) =>
+  //       prevText.length === targetText.length
+  //         ? targetText
+  //         : prevText + targetText[charIndex++]
+  //     );
+
+  //     if (charIndex === targetText.length) {
+  //       clearInterval(interval);
+  //       setShowRgtTitle(true);
+  //     }
+  //   }, 80);
+
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   setShowWebVisual(true);
+  //   randomCard();
+  //   const container = containerRef.current;
+
+  //   if (container) {
+  //     // 스크롤 위치 고정
+  //     container.scrollLeft = initialScrollLeft;
+
+  //     // 스크롤 이벤트 리스너 추가
+  //     const handleScroll = (e) => {
+  //       if (container.scrollLeft !== initialScrollLeft) {
+  //         container.scrollLeft = initialScrollLeft;
+  //       }
+  //     };
+
+  //     container.addEventListener("scroll", handleScroll);
+
+  //     return () => {
+  //       clearInterval(interval);
+
+  //       window.removeEventListener("scroll", handleScroll);
+  //       container.removeEventListener("scroll", handleScroll);
+  //     };
+  //   }
+  // }, []);
+
+  // const containerRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const sliderRef = useRef(null);
+  useEffect(() => {
+    const container = sliderRef.current;
+    if (container) {
+      // 5초마다 슬라이드 이동
+      const intervalId = setInterval(() => {
+        // 슬라이드 이동 로직 추가
+        container.scrollLeft += 320; // 한 슬라이드의 너비가 320px로 가정
+        if (
+          container.scrollLeft + container.clientWidth >=
+          container.scrollWidth
+        ) {
+          // 슬라이드가 마지막까지 이동하면 처음으로 돌아갑니다.
+          container.scrollLeft = 0;
+        }
+      }, 5000); // 5초마다 슬라이드 이동
+
+      return () => {
+        clearInterval(intervalId);
+      };
+    }
+  }, [randomC]);
+
+  useEffect(() => {
+    if (initialRender) {
+      randomCard();
+      setInitialRender(false);
+    }
+  }, [initialRender]);
+
+  useEffect(() => {
+    if (!initialRender) {
+      randomC.forEach((item) => {
+        const imgElement = new Image();
+        imgElement.src = item.cardImg;
+        imgElement.onload = () => {
+          if (imgElement.width > imgElement.height) {
+            // 이미지가 가로로 길 경우
+            // 클래스 추가
+            setImageClassMap((prevMap) => ({
+              ...prevMap,
+              [item.cardImg]: "rotateBox",
+            }));
+          } else {
+            setImageClassMap((prevMap) => ({
+              ...prevMap,
+              [item.cardImg]: "cardImg",
+            }));
+          }
+        };
+      });
+    }
+  }, [randomC, initialRender]);
+  // const [imageClassMap, setImageClassMap] = useState({});
+  // const containerRef = useRef(null);
+
+  // 스크롤 위치를 고정할 값 설정
+
+  // useEffect(() => {
+  //   setShowWebVisual(true);
+  //   randomCard();
+  // }, []);
+  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  // ############################################################
+  // const [randomCardIndex, setRandomCardIndex] = useState(0);
+  // const [imageWidth, setImageWidth] = useState(null);
+  // const [imageHeight, setImageHeight] = useState(null);
+
+  // useEffect(() => {
+  //   console.log("randomC ===>", randomC);
+  //   const changeRandomCard = () => {
+  //     const randomIndex = Math.floor(Math.random() * randomC.length);
+  //     setTimeout(() => {
+  //       setRandomCardIndex(randomIndex);
+  //       preloadImage(randomC[randomIndex].cardImg);
+  //     }, 1000); // 1초 후에 이미지 변경
+  //   };
+
+  //   const preloadImage = (url) => {
+  //     const img = new Image();
+  //     img.src = url;
+  //     img.onload = () => {
+  //       setImageWidth(img.width);
+  //       setImageHeight(img.height);
+  //     };
+  //   };
+
+  //   const cardChangeTimer = setInterval(changeRandomCard, 3000);
+
+  //   return () => {
+  //     clearInterval(cardChangeTimer);
+  //   };
+  // }, [randomC]);
+
+  // const currentCard = randomC[randomCardIndex];
+
+  // // 이미지의 가로 길이가 세로 길이보다 큰지 확인합니다.
+  // const isHorizontal = imageWidth > imageHeight;
+
+  // // 조건에 따라 CSS 스타일을 정의합니다.
+  // const imgStyle = {
+  //   width: isHorizontal ? "400px" : "250px",
+  //   height: isHorizontal ? "250px" : "400px",
+  //   transform: isHorizontal ? "rotate(-90deg)" : "none",
+  // };
+  // // 초기 렌더링 시에도 imgStyle을 적용합니다.
+  // const initialImgStyle = {
+  //   width: "400px", // 또는 다른 초기 스타일
+  //   height: "250px", // 또는 다른 초기 스타일
+  //   transform: "none", // 또는 다른 초기 스타일
+  // };
+
+  // useEffect(() => {
+  //   const imgElements = document.querySelectorAll(".mainVis img");
+
+  //   imgElements.forEach((imgElement) => {
+  //     const element = imgElement;
+  //     if (element.height < element.width) {
+  //       element.classList.add("rotateBox");
+  //     } else {
+  //       element.classList.remove("rotateBox");
+  //       element.classList.add("cardImg");
+  //     }
+  //   });
+  // }, [randomC]);
+
+  //   const preloadImage = (url) => {
+  //     const img = new Image();
+  //     img.src = url;
+  //     img.onload = () => {
+  //       setImageWidth(img.width);
+  //       setImageHeight(img.height);
+  //     };
+  //   };
+  //   randomC.map((item)=>{
+  //     preloadImage(item.cardImg)
+  //     const isHorizontal = imageWidth > imageHeight;
+
+  //   })
+
+  //   const imgElements = document.querySelectorAll(".mainVis img");
+
+  //   imgElements.forEach((imgElement) => {
+  //     const element = imgElement;
+  //     if (element.height < element.width) {
+  //       element.classList.add("rotateBox");
+  //     } else {
+  //       element.classList.remove("rotateBox");
+  //       element.classList.add("cardImg");
+  //     }
+  //   });
+  // }, [randomC]);
+
+  // ############################################################
+
+  // const [randomCardIndex, setRandomCardIndex] = useState(0);
+
+  // useEffect(() => {
+  //   const changeRandomCard = () => {
+  //     const randomIndex = Math.floor(Math.random() * randomC.length);
+  //     setTimeout(() => {
+  //       setRandomCardIndex(randomIndex);
+  //     }, 1000); // 1초 후에 이미지 변경
+  //   };
+
+  //   const cardChangeTimer = setInterval(changeRandomCard, 3000);
+
+  //   return () => {
+  //     clearInterval(cardChangeTimer);
+  //   };
+  // }, [randomC]);
+
+  // const currentCard = randomC[randomCardIndex];
+  // // 이미지의 가로 길이가 세로 길이보다 큰지 확인합니다.
+  // const isHorizontal =
+  //   currentCard &&
+  //   currentCard.cardImg &&
+  //   currentCard.cardImg.width > currentCard.cardImg.height;
+  // console.log("currentCard ===>", currentCard);
+  // console.log("currentCard.cardImg ===>", currentCard.cardImg);
+  // console.log("currentCard.cardImg.width ====>", currentCard.cardImg.width);
+  // console.log("currentCard.cardImg.height ====>", currentCard.cardImg.height);
+  // // 조건에 따라 CSS 스타일을 정의합니다.
+  // const imgStyle = {
+  //   width: isHorizontal ? "250px" : "250px",
+  //   height: isHorizontal ? "1000px" : "400px",
+  //   // transform: isHorizontal ? "rotate(-180deg)" : "none",
+  // };
+  // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  // useEffect(() => {
+  //   const imgElements = document.querySelectorAll(".cardBox img");
+
+  // }, [dividedDataObj2]);
+
+  useEffect(() => {
+    if (showWebVisual) {
+      setWebVisualAnimated(true);
+      const animationInterval = setInterval(() => {
+        setWebVisualOpacity((prevOpacity) =>
+          prevOpacity + 0.08 > 1 ? 1 : prevOpacity + 0.08
+        );
+      }, 40);
+
+      return () => clearInterval(animationInterval);
+    }
+  }, [showWebVisual]);
+
+  useEffect(() => {
+    if (showRgtTitle && webVisualOpacity === 1) {
+      setTimeout(() => {
+        setShowWebVisualAnimated(true);
+      }, 100);
+    }
+  }, [showRgtTitle, webVisualOpacity]);
+
+  // const calculateWebTextOpacity = () => {
+  //   const maxOpacity = 1;
+  //   const minOpacity = 0.4;
+
+  //   let opacity = maxOpacity - scrollPosition * 1.5;
+  //   if (opacity < minOpacity) {
+  //     opacity = minOpacity;
+  //   }
+
+  //   if (webVisualOffset <= 25) {
+  //     return opacity * (webVisualAnimated ? webVisualOpacity : 0);
+  //   } else {
+  //     return (
+  //       opacity *
+  //       (1 - (webVisualOffset - 25) / 25) *
+  //       (webVisualAnimated ? webVisualOpacity : 0)
+  //     );
+  //   }
+  // };
+
+  const webVisualStyle = {
+    transform: `translateY(calc(-${webVisualOffset}vh))`,
+    opacity: showWebVisualAnimated ? webVisualOpacity : 0, // showWebVisualAnimated 상태 값에 따라 조정
+    transition: "transform 0.3s ease-in-out, opacity 0.5s ease-in-out",
+    pointerEvents: showWebVisualAnimated ? "auto" : "none",
+  };
+  const getKoreanTime = () => {
+    const utcNow = new Date();
+    const koreanTime = new Date(
+      utcNow.getUTCFullYear(),
+      utcNow.getUTCMonth(),
+      utcNow.getUTCDate(),
+      utcNow.getUTCHours() + 9,
+      utcNow.getUTCMinutes(),
+      utcNow.getUTCSeconds()
+    );
+    return koreanTime;
+  };
+  const getKoreanDayOfWeek = () => {
+    const daysOfWeek = ["SUN", "MON", "TUE", "WED", "THR", "FRI", "SAT"];
+    const dayIndex = getKoreanTime().getDay();
+    return daysOfWeek[dayIndex];
+  };
+
+  if (!randomC || randomC.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="main-container">
+      {/* <section>
+        <div className="webText">
+          <div className="mainVis">
+            <div className="mainLeft">
+              <p>123</p>
+              <p>123</p>
+              <p>123</p>
+              <p>123</p>
+            </div>
+            <div className="mainRight">
+              <div className="scrollableContainer" ref={containerRef}>
+                {randomC.map((item, index) => (
+                  <div className="rightCardBox" key={index}>
+                    <div className="textCont">
+                      <p className="cardCop">{item.cardCoKor}</p>
+                      <p className="title">
+                        {item.cardName.split("&nbsp;").join(" ")}
+                      </p>
+                      <p className="benefit">
+                        주요혜택 : {item.benefitKor.split("&nbsp;").join(" ")}
+                      </p>
+                      <p className="annualFee">
+                        연회비 : {item.nationalType.split("&nbsp;").join(" ")}
+                      </p>
+                    </div>
+                    <div className="imgBox">
+                      <img
+                        className={imageClassMap[item.cardImg]}
+                        src={item.cardImg}
+                        alt={item.cardType}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="home__hero__logo column xlarge-9 is-visible lftTitle">
+              <div style={{ display: "flex" }}>
+                <p style={{ fontSize: "150px" }}>{currentText}</p>
+              </div>
+            </div>
+            <div
+              className="rgtTitle"
+              data-animation-delay="300"
+              onAnimationEnd={handleRgtTitleAnimationEnd}
+              style={{
+                opacity: showRgtTitle ? 1 : 0,
+                transition: "opacity 0.4s ease-in-out",
+              }}
+            >
+              <div style={{ marginLeft: 30 }}>
+                <div
+                  data-animation="fade-in-up"
+                  data-animation-delay="300"
+                  className="is-visible"
+                >
+                  <span className="time" data-timezone="Asia/Seoul">
+                    <span className="time__hour">
+                      {getKoreanTime().getHours().toString().padStart(2, "0")}
+                    </span>
+                    <span className="blink">:</span>
+                    <span className="time__minute">
+                      {getKoreanTime().getMinutes().toString().padStart(2, "0")}
+                    </span>{" "}
+                    (KST)
+                  </span>
+                  <span className="day-of-week"> {getKoreanDayOfWeek()}</span>
+                </div>
+                <h2
+                  data-animation="fade-in-up"
+                  data-animation-delay="400"
+                  data-animation-delay-mobile="200"
+                  className="is-visible"
+                  style={{ marginTop: 60 }}
+                >
+                  금융, 그 이상의
+                  <br />
+                  역사를 만들고 싶습니다.
+                  <br />
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="webVisual"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={webVisualStyle}
+        >
+          1234
+        </div>
+      </section> */}
+
+      <div className="mainVis">
+        <div className="scrollableContainer" ref={sliderRef}>
+          {randomC.map((item, index) => (
+            <div className="rightCardBox" key={index}>
+              <div className="textCont">
+                <p className="cardCop">{item.cardCoKor}</p>
+                <p className="title">
+                  {item.cardName.split("&nbsp;").join(" ")}
+                </p>
+                <p className="benefit">
+                  주요혜택 : {item.benefitKor.split("&nbsp;").join(" ")}
+                </p>
+                <p className="annualFee">
+                  연회비 : {item.nationalType.split("&nbsp;").join(" ")}
+                </p>
+              </div>
+              <div className="imgBox">
+                <img
+                  className={imageClassMap[item.cardImg]}
+                  src={item.cardImg}
+                  alt={item.cardType}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section className="home__about">
+        <div className="row">
+          <div
+            className="column small-12 xlarge-3 large-up is-visible"
+            data-animation="fade-in"
+          >
+            <span className="myName">Project by : Min Kyung Eon</span>
+          </div>
+          <div
+            className="column small-12 large-10 xlarge-3 is-visible div1"
+            data-animation="fade-in"
+            data-animation-delay="100"
+          >
+            <p className="titleSub"> 3분이면 카드 비교 끝!</p>
+            <br />
+            <h4
+              className="h2 is-visible titleH4"
+              data-animation="fade-in-up"
+              data-animation-delay="100"
+            >
+              버려지는 돈?
+            </h4>
+            <br />
+            <p className="titleP">
+              포인트, 할인, 캐쉬백, 마일리지, 놓치지 말고 다 가져가세요
+            </p>
+          </div>
+          <div
+            className="column small-6 large-5 xlarge-3 is-visible div2"
+            data-animation="fade-in"
+            data-animation-delay="300"
+          >
+            <p className="titleSub"> 소비 패턴 분석</p>
+            <br />
+            <h4
+              className="h2 is-visible titleH4"
+              data-animation="fade-in-up"
+              data-animation-delay="300"
+            >
+              소비 패턴을 분학하고 필요한 카드를
+            </h4>
+            <br />
+            <p className="titleP">
+              직업, 직군, 성별, 상관 없이 '오직' 소비 패턴으로 필요한 카드를
+              발급받으세요.
+            </p>
+            <Link to="/xlsx2">
+              <div>
+                <div className="underline-animation">Pattern analysis</div>
+              </div>
+            </Link>
+          </div>
+          <div
+            className="column small-6 large-5 xlarge-3 is-visible div3"
+            data-animation="fade-in"
+            data-animation-delay="400"
+          >
+            <p className="titleSub">버려지는 돈?</p>
+            <br />
+            <h4
+              className="h2 is-visible titleH4"
+              data-animation="fade-in-up"
+              data-animation-delay="400"
+            >
+              CARD
+            </h4>
+            <br />
+            <p className="titleP">
+              필요한 카드를 확인하는 가장 <br />
+              빠른 방법
+            </p>
+            <Link to="/about">
+              <div>
+                <div className="underline-animation">Search card</div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Main;

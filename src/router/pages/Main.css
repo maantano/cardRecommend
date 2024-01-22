@@ -1,0 +1,616 @@
+.myName {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  color: #000;
+  font-family: "NotoSans KR, sans-serif";
+}
+
+.webText {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.webText .lftTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 30px;
+}
+.webText .row {
+  padding-bottom: 0;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: var(--gutter) 0;
+}
+/* .is-visible {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 0;
+  transition: opacity 0.6s;
+} */
+.home__about .div1 .titleSub {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(88 150 241);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.home__about .div1 .titleH4 {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-size: 30px;
+  font-weight: 600;
+  /* display: inline; */
+  font-style: normal;
+  color: #000;
+  font-family: "NotoSans KR, sans-serif";
+}
+.home__about .div1 .titleP {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-family: "Noto Sans KR, sans-serif";
+  color: rgba(0, 0, 0, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
+  font-size: 22px;
+  font-weight: 600;
+  /* display: inline; */
+}
+.home__about .div2 .titleSub {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(88 150 241);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.home__about .div2 .titleH4 {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-size: 30px;
+  font-weight: 600;
+  /* display: inline; */
+  font-style: normal;
+  color: #000;
+  font-family: "NotoSans KR, sans-serif";
+}
+.home__about .div2 .titleP {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-family: "Noto Sans KR, sans-serif";
+  color: rgba(0, 0, 0, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
+  font-size: 22px;
+  font-weight: 600;
+  /* display: inline; */
+}
+.underline-animation {
+  position: relative;
+  margin-top: 20px;
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.underline-animation:hover::after {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+.home__about .div3 .titleSub {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(88 150 241);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.home__about .div3 .titleH4 {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-size: 30px;
+  font-weight: 600;
+  /* display: inline; */
+  font-style: normal;
+  color: #000;
+  font-family: "NotoSans KR, sans-serif";
+}
+.home__about .div3 .titleP {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-family: "Noto Sans KR, sans-serif";
+  color: rgba(0, 0, 0, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
+  font-size: 22px;
+  font-weight: 600;
+  /* display: inline; */
+}
+
+.column {
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0px;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+[data-animation="fade-in"].is-visible {
+  opacity: 1;
+}
+.rgtTitle {
+  border-left: 1px solid #c4dbe0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.webVisual {
+  background-color: red;
+  width: 96%;
+  height: 700px;
+  margin: 30px;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.home__about .column {
+  min-height: 25.92593vw;
+  padding: 30px;
+}
+@media (min-width: 1001px) {
+  .xlarge-9 {
+    -ms-flex: 0 0 74.99997%;
+    flex: 0 0 74.99997%;
+    max-width: 70.99997%;
+  }
+  .column:not(.large-down) + .column {
+    border-left: 1px solid #c4dbe0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .home__hero__logo {
+    margin-top: var(--gutter);
+    -ms-flex-align: end;
+    align-items: flex-end;
+  }
+}
+.mainVis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 700px;
+  margin: 50px 0;
+  white-space: nowrap;
+  /* background-color: #f5f5f7; */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* .mainVis::before {
+  content: "";
+  flex: 0 0 50%;
+  background-color: white;
+} */
+.mainVis::after {
+  content: "";
+  flex: 0 0 8px;
+}
+
+.scrollableContainer {
+  white-space: nowrap;
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-800%);
+  }
+}
+
+.mainVis .backTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+  font-size: 75px;
+  font-weight: 700;
+}
+.mainVis .a {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  animation: fade-in 1s ease-in-out forwards;
+}
+.backTitle.a {
+  animation-delay: 1s; /* 애니메이션 시작을 1초 뒤로 지연 */
+}
+
+.mainVis .b {
+  opacity: 0;
+}
+
+.mainVis .rightCardBox {
+  width: 320px;
+  height: 550px;
+  border-radius: 18px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* border: 1px solid #000; */
+  background-color: #fff;
+  margin-right: 10px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+  transition: transform 0.5s ease; /* 슬라이드 애니메이션 설정 */
+}
+.rightCardBox.active {
+  transform: translateX(-100%); /* 활성 슬라이드가 왼쪽으로 이동 */
+}
+
+.mainVis .rightCardBox .textCont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 30px;
+}
+.mainVis .rotateBox {
+  height: 250px;
+  transform: rotate(-90deg);
+}
+.rotate {
+  height: 250px;
+  transform: rotate(-90deg);
+}
+.mainVis .rightCardBox img {
+  /* margin-top: 130px; */
+  margin-top: 10px;
+}
+.mainVis .rightCardBox .mainCardImg {
+  margin-top: 100px;
+  width: 250px;
+  height: 400px;
+}
+.mainVis .rightCardBox .rotateBox {
+  /* margin-top: 203px; */
+  margin-top: 85px;
+}
+
+.mainVis .rightCardBox .textCont p {
+  margin-top: 5px;
+}
+.mainVis .rightCardBox .textCont .title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.mainVis .rightCardBox .textCont .cardCop {
+  font-size: 15px;
+  font-weight: 600;
+  color: #999;
+}
+.mainVis .rightCardBox .textCont .benefit {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+}
+.mainVis .rightCardBox .textCont .annualFee {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+}
+.mainVis .rightCardBox .imgBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+}
+
+.mainLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.mainVis .rightCardBox:last-child {
+  padding-right: 20px; /* 마지막 요소에는 간격을 제거합니다 */
+}
+.mainVis .rightCardBox:first-child {
+  margin-left: 0; /* 첫 번째 요소에는 왼쪽 간격을 제거합니다 */
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes mainSlide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}
+.aniDoneMainVis {
+  min-height: 800px;
+  display: flex;
+  width: 100%;
+  /* opacity: 0; */
+  flex-direction: row;
+  animation-delay: 0.5s;
+
+  animation: fadeOut 1s ease-in-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* .mainVis .a {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  animation: fade-in 1s ease-in-out forwards;
+}
+.backTitle.a {
+  animation-delay: 1s;
+} */
+.visualSection {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 200px;
+  margin-right: 120px;
+}
+.visualSection .leftS {
+  margin-top: -100px;
+}
+.visualSection .leftS .leftTitle {
+  font-size: 35px;
+  font-weight: 900;
+}
+.visualSection .leftS .leftSubTitle {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.visualSection .rightS {
+  /* background-color: red; */
+}
+
+.aniDoneMainVis .rightCardBox {
+  width: 320px;
+  height: 550px;
+  border-radius: 18px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid #000; */
+  background-color: #fff;
+  margin-right: 10px;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.16);
+  transition: transform 0.5s ease; /* 슬라이드 애니메이션 설정 */
+}
+/* .rightCardBox.active {
+  transform: translateX(-100%);
+} */
+.aniDoneMainVis .rightCardBox .textCont {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 30px;
+}
+.aniDoneMainVis .rotateBox {
+  height: 250px;
+  transform: rotate(-90deg);
+}
+
+.aniDoneMainVis .rightCardBox .mainCardImg {
+  margin-top: 100px;
+  width: 250px;
+  height: 400px;
+}
+.aniDoneMainVis .rightCardBox .rotateBox {
+  /* margin-top: 203px; */
+  margin-top: 85px;
+}
+
+.aniDoneMainVis .rightCardBox .textCont p {
+  margin-top: 5px;
+}
+.aniDoneMainVis .rightCardBox .textCont .title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.aniDoneMainVis .rightCardBox .textCont .cardCop {
+  font-size: 15px;
+  font-weight: 600;
+  color: #999;
+}
+.aniDoneMainVis .rightCardBox .textCont .benefit {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+}
+.aniDoneMainVis .rightCardBox .textCont .annualFee {
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+}
+.aniDoneMainVis .rightCardBox .imgBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+}
+.aniDoneMainVis .rightCardBox .cardImgBox {
+  /* background-color: #999; */
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 400px;
+}
+
+.aniDoneMainVis .rightCardBox .imgBox img {
+  width: 150px;
+  margin-top: -30px;
+  animation: updown 1.5s ease-in Infinite Alternate;
+}
+@keyframes updown {
+  0% {
+    transform: translateY(10%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+}
+
+.skyBanner {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: red;
+}
+.cardCopContainer {
+  background-color: #f5f5f5;
+  opacity: 1;
+  display: flex;
+  flex-wrap: wrap; /* wrap으로 설정하여 요소가 넘치면 다음 줄로 이동 */
+  justify-content: center;
+  align-items: center; /* 상단 정렬 */
+  height: auto; /* 높이를 자동으로 조정 */
+  animation-delay: 0.5s;
+  animation: fadeOut 1s ease-in-out;
+  flex-direction: column;
+  padding: 0 50px;
+}
+.cardCopContainer h1 {
+  margin-left: -45%;
+  margin-top: 30px;
+}
+.cardContainer2 {
+  display: flex;
+  width: 60%;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.cardCopBtn {
+  background: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  margin-top: 30px;
+}
+/* .cardCopBtn:last-child {
+  margin-bottom: 30px;
+} */
+.cardCopBtn:nth-child(5n) {
+  margin-right: 0; /* 5번째 요소마다 오른쪽 여백 제거 */
+}
+
+.cardCorpImg {
+  height: 50px;
+}
+
+/* .aniDoneMainVis::before {
+  transform: translateZ(0);
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 10%;
+  height: 80%;
+  width: 100%;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+        circle farthest-corner at 0 0,
+        #ffffff 30%,
+        #99c2fb 65%,
+        #5e8edc 80%,
+        #c1f1ff 110%
+      )
+      no-repeat,
+    radial-gradient(closest-side at 60% 55%, #b0cbe9 40%, #ffffff 100%)
+      no-repeat;
+  background-blend-mode: overlay;
+} */
+
+/* .aniDoneMainVis::before {
+  transform: translateZ(0);
+  position: absolute;
+  content: "";
+  z-index: -1;
+  top: 10%;
+  height: 80%;
+  width: 100%;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+        circle farthest-corner at 0 0,
+        #ffffff 30%,
+        #bbc4d0 65%,
+        #b5c1d2 80%,
+        #c2d9e0 110%
+      )
+      no-repeat,
+    radial-gradient(closest-side at 60% 55%, #a5b3c2 40%, #ffffff 100%)
+      no-repeat;
+  background-blend-mode: overlay;
+} */

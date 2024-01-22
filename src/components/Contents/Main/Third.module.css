@@ -1,0 +1,79 @@
+.firstSection {
+  align-items: center;
+  text-align: left;
+  /* padding-top: 40px;
+  padding-bottom: 100px; */
+  flex-direction: column;
+  -webkit-box-align: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 100px; */
+}
+.firstDiv {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin: 0px auto;
+}
+.firstText {
+  display: block;
+  color: #7b7b7b;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+}
+.firstText > strong {
+  display: block;
+  margin: 12px 0 0;
+  color: #0b0c0c;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+.secondDiv {
+  font-family: Noto Sans KR, sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.firstUl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: max-content;
+}
+.ulLi {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0;
+  width: 130px;
+  height: 120px;
+  border-radius: 18px;
+  background-color: rgba(var(--color-white-900), var(--tw-bg-opacity, 1));
+  border-width: 2px;
+  border-color: #e4edf2;
+  border-style: solid;
+  color: rgba(var(--color-gray-050), var(--tw-text-opacity, 1));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 6px;
+}
+
+.liSvg {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+/* align-items: center;  세로 가운데 정렬  */
+/* justify-items: center; 가로 가운데 정렬 */
+
+.liSpan {
+  font-size: 17px;
+  font-weight: 500;
+  margin-left: 8px;
+}

@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+.total {
+  width: 100vw;
+  background-color: #121416;
+}
+.firstDiv {
+  min-height: 248px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1100px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.secondDiv {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+.lf-firstDiv {
+  /* max-width: 640px; */
+  padding: 110px 0 80px;
+  flex-basis: 66.66667%;
+  box-sizing: border-box;
+}
+
+.lf-firstH1 {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-size: 48px;
+  font-weight: 600;
+  display: inline;
+  font-style: normal;
+  color: #ffffff;
+  /* color: #1d1d1f; */
+  font-family: "NotoSans KR, sans-serif";
+}
+
+.lf-secondDiv {
+  line-height: 1.1875;
+  letter-spacing: 0;
+  font-family: "Noto Sans KR, sans-serif";
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 48px;
+  font-weight: 600;
+  display: inline;
+}
+
+.rg-upside-firstDiv {
+  position: absolute;
+  right: 0;
+  padding-bottom: 54px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  padding: 80px 0 74px;
+  max-width: 33.3333%;
+  flex-basis: 33.3333%;
+  box-sizing: border-box;
+}
+
+.rg-upside-secondDiv {
+  line-height: 1.57143;
+  letter-spacing: 0;
+  font-family: Noto Sans KR, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  flex-direction: row;
+  padding-bottom: 16px;
+  display: flex;
+}
+
+.rg-upside-thirdDiv {
+  width: 50px;
+  height: 36x;
+  padding-right: 8px;
+}
+.rg-upside-fifthDiv {
+  background: transparent;
+  border: 0;
+  color: #06c;
+  font-size: inherit;
+  line-height: "inherit";
+  font-weight: inherit;
+  letter-spacing: inherit;
+  padding: 0;
+  vertical-align: inherit;
+  cursor: pointer;
+  font-family: Noto Sans KR, sans-serif;
+}
+
+.rg-douwnside-firstDiv {
+  line-height: 1.57143;
+  letter-spacing: 0;
+  font-family: Noto Sans KR, sans-serif;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+}
+.rg_firtDiv {
+  font-family: Noto Sans KR, sans-serif;
+  text-align: center;
+}
+.rg_firstText {
+  text-align: left;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 26.29px;
+  color: #b0b8c1;
+  letter-spacing: normal;
+  word-break: keep-all;
+}
+.rg_btnDiv {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 40px;
+}
+.btn {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 150px;
+  height: 30px;
+  padding: 37px 37px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  font-stretch: normal;
+  line-height: 6px;
+  color: #121416;
+  letter-spacing: normal;
+  word-break: keep-all;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.rg_cssBtn {
+  font-size: 20px;
+  line-height: 24px;
+  width: 375px;
+  height: 70px;
+  font-weight: 700;
+  color: white;
+  background-color: #4b4b4b;
+  text-align: center;
+  border-radius: 12px;
+  position: relative;
+}
+
+@media (max-width: 700px) {
+  .firstDiv {
+    min-height: 248px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+
+  .lf-firstH1 {
+    line-height: 1.1875;
+    letter-spacing: 0;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline;
+    font-style: normal;
+    color: #1d1d1f;
+    font-family: "NotoSans KR, sans-serif";
+  }
+  .rg-upside-secondDiv {
+    line-height: 1.57143;
+    letter-spacing: 0;
+    font-family: Noto Sans KR, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    flex-direction: row;
+    padding-bottom: 16px;
+    display: flex;
+  }
+  .lf-secondDiv {
+    line-height: 1.1875;
+    letter-spacing: 0;
+    font-family: "Noto Sans KR, sans-serif";
+    color: #6e6e73;
+    font-size: 20px;
+    font-weight: 600;
+    display: inline;
+  }
+}
+
+.rgMbContent {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 22%;
+  left: 22%;
+  width: 52%;
+  height: auto;
+}
+
+.rg-mb {
+  justify-content: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  padding-bottom: 54px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  align-content: flex-end;
+  padding: 80px 0 74px;
+  max-width: 40%;
+  flex-basis: 33.3333%;
+  box-sizing: border-box;
+  margin-top: 3%;
+}
