@@ -54,7 +54,7 @@
     "xlsx": "^0.18.5",
     "zustand": "^4.4.1"
   },
-  "proxy": "//ec2-3-38-115-252.ap-northeast-2.compute.amazonaws.com:9000",
+  "proxy": "//ec2-3-38-115-252.ap-northeast-2.compute.amazonaws.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
