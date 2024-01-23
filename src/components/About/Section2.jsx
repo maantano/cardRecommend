@@ -16,14 +16,11 @@ export const asyncBankUpFetch = createAsyncThunk(
   "eventReducer/asyncBankUpFetch",
   async ({ checkedBankList, eventType, refresh }) => {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/bankCount`,
-        {
-          checkedBankList,
-          eventType,
-          refresh,
-        }
-      );
+      const response = await Axios.post(`/api/bankCount`, {
+        checkedBankList,
+        eventType,
+        refresh,
+      });
       return response.data;
     } catch (e) {
       console.log(e);

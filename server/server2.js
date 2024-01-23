@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
 //     };
 // });
 
-app.get(`${process.env.REACT_APP_HOST}/api/bank`, (req, res) => {
+app.get(`/api/bank`, (req, res) => {
   res.header("Access-Control-Allow-Origin", "*");
 
   const sqlQuery = "SELECT * FROM CARD";

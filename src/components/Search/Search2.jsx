@@ -8,12 +8,9 @@ export const asyncUpFetchCardCop = createAsyncThunk(
   "cardCorp/cardCorpReducer",
   async ({ corporationTarget }) => {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/cardCorporation`,
-        {
-          corporationTarget,
-        }
-      );
+      const response = await Axios.post(`/api/cardCorporation`, {
+        corporationTarget,
+      });
       return response.data;
     } catch (e) {
       console.log("asyncUpFetchXlsx ERROR 데이터를 받아올 수 없습니다.");
@@ -34,12 +31,9 @@ const Search2 = () => {
 
   async function targetCard(targetId) {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/targetCard`,
-        {
-          targetId,
-        }
-      );
+      const response = await Axios.post(`/api/targetCard`, {
+        targetId,
+      });
       navigateToDetail(response.data[0]);
     } catch (err) {
       console.error("API Error:", err.message);

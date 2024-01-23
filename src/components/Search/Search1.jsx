@@ -40,21 +40,18 @@ export const asyncSearchFetch = createAsyncThunk(
     cardCorp,
   }) => {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/search/cardList`,
-        {
-          amount,
-          prevRec,
-          selectCard,
-          type,
-          bankList,
-          listCate,
-          checkBenefitList,
-          list,
-          top3Benefit,
-          cardCorp,
-        }
-      );
+      const response = await Axios.post(`/api/search/cardList`, {
+        amount,
+        prevRec,
+        selectCard,
+        type,
+        bankList,
+        listCate,
+        checkBenefitList,
+        list,
+        top3Benefit,
+        cardCorp,
+      });
       return response.data;
     } catch (e) {
       console.log("asyncUpFetch ERROR 데이터를 받아올 수 없습니다.");

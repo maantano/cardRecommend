@@ -63,13 +63,10 @@ export const asyncUpFetchXlsx = createAsyncThunk(
   "xlsxTop3/asyncUpFetchXlsx",
   async ({ checkedList, cardType }: AsyncUpFetchXlsxProps) => {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/summary3`,
-        {
-          checkedList,
-          cardType,
-        }
-      );
+      const response = await Axios.post(`/api/summary3`, {
+        checkedList,
+        cardType,
+      });
       return response.data;
     } catch (e) {
       console.log("asyncUpFetchXlsx ERROR 데이터를 받아올 수 없습니다.");
@@ -117,12 +114,9 @@ const Summary3: React.FC<Props> = ({
 
   async function summaryBenefit() {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/summaryBenefit`,
-        {
-          top3Codes,
-        }
-      );
+      const response = await Axios.post(`/api/summaryBenefit`, {
+        top3Codes,
+      });
       setSummaryBenefitResult(response.data);
       return response.data;
     } catch (error: any) {
@@ -134,12 +128,9 @@ const Summary3: React.FC<Props> = ({
 
   async function top3Benefit() {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/top3Benefit`,
-        {
-          top3Benefit: summaryBenefitResult,
-        }
-      );
+      const response = await Axios.post(`/api/top3Benefit`, {
+        top3Benefit: summaryBenefitResult,
+      });
       setTop3BenefitResult(response.data);
     } catch (err: any) {
       console.error("API Error:", err.message);
@@ -179,12 +170,9 @@ const Summary3: React.FC<Props> = ({
 
   async function top3Card() {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/top3Card2`,
-        {
-          top3BenefitId,
-        }
-      );
+      const response = await Axios.post(`/api/top3Card2`, {
+        top3BenefitId,
+      });
       const newDividedDataObj: Record<number, DividedData[]> = {};
       const keys = Object.keys(response.data);
       keys.forEach((key, idx) => {
