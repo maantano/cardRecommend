@@ -15,9 +15,12 @@ export const asyncUpFetchCardCop = createAsyncThunk(
   "cardCorp/cardCorpReducer",
   async ({ corporationTarget }) => {
     try {
-      const response = await Axios.post(`/api/cardCorporation`, {
-        corporationTarget,
-      });
+      const response = await Axios.post(
+        `${process.env.REACT_APP_HOST}/api/cardCorporation`,
+        {
+          corporationTarget,
+        }
+      );
       return response.data;
     } catch (e) {
       console.log("asyncUpFetchXlsx ERROR 데이터를 받아올 수 없습니다.");
@@ -39,7 +42,9 @@ const Main = () => {
   // firebase 마이그레이션 randomCard ========================================================
   async function randomCard() {
     try {
-      const response = await Axios.post(`/api/randomCard`);
+      const response = await Axios.post(
+        `https://${process.env.REACT_APP_HOST}/api/randomCard`
+      );
       setRandC(response.data);
     } catch (error) {
       // 에러 처리
@@ -80,7 +85,9 @@ const Main = () => {
   // firebase 마이그레이션 cardCorpList ========================================================
   async function cardCorpList() {
     try {
-      const response = await Axios.post(`https:///api/cardCorporationList`);
+      const response = await Axios.post(
+        `https://${process.env.REACT_APP_HOST}/api/cardCorporationList`
+      );
       setCorporationCList(response.data);
     } catch (error) {
       // 에러 처리
