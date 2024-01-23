@@ -15,12 +15,9 @@ export const asyncUpFetchCardCop = createAsyncThunk(
   "cardCorp/cardCorpReducer",
   async ({ corporationTarget }) => {
     try {
-      const response = await Axios.post(
-        `${process.env.REACT_APP_HOST}/api/cardCorporation`,
-        {
-          corporationTarget,
-        }
-      );
+      const response = await Axios.post(`/api/cardCorporation`, {
+        corporationTarget,
+      });
       return response.data;
     } catch (e) {
       console.log("asyncUpFetchXlsx ERROR 데이터를 받아올 수 없습니다.");
@@ -33,6 +30,7 @@ const Main = () => {
   const [imageClassMap, setImageClassMap] = useState({});
   const [initialRender, setInitialRender] = useState(true);
   const [randomC, setRandC] = useState([]);
+  const [callIndex, setCallIndex] = useState([]);
 
   const [corporationCList, setCorporationCList] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,11 +38,21 @@ const Main = () => {
   const navigate = useNavigate();
 
   // firebase 마이그레이션 randomCard ========================================================
+  async function callIndexFun() {
+    try {
+      const response = await Axios.post(`/`);
+      console.log("callIndexFun !!! =====> ", response.data);
+      setCallIndex(response.data);
+    } catch (error) {
+      // 에러 처리
+      console.error("API Error:", error.message);
+      throw error;
+    }
+  }
+
   async function randomCard() {
     try {
-      const response = await Axios.post(
-        `https://${process.env.REACT_APP_HOST}/api/randomCard`
-      );
+      const response = await Axios.post(`/api/randomCard`);
       setRandC(response.data);
     } catch (error) {
       // 에러 처리
@@ -52,42 +60,9 @@ const Main = () => {
       throw error;
     }
   }
-  // function getRandomIndexes(max, count) {
-  //   const indexes = [];
-  //   while (indexes.length < count) {
-  //     const randomIndex = Math.floor(Math.random() * max);
-  //     if (!indexes.includes(randomIndex)) {
-  //       indexes.push(randomIndex);
-  //     }
-  //   }
-  //   return indexes;
-  // }
-  // // const async function randomCard() {
-  // const randomCard = async () => {
-  //   try {
-  //     const newDataList = [];
-  //     const snapshot = await firestore.collection("cardAll").get();
-  //     const allData = snapshot.docs.map((doc) => doc.data());
-
-  //     // 랜덤으로 20개 선택
-  //     const randomIndexes = getRandomIndexes(allData.length, 20);
-  //     randomIndexes.forEach((index) => {
-  //       newDataList.push(allData[index]);
-  //     });
-  //     setRandC(newDataList);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // };
-  // firebase 마이그레이션 randomCard ========================================================
-
-  // ----------------------------------------------------------------------------------------
-  // firebase 마이그레이션 cardCorpList ========================================================
   async function cardCorpList() {
     try {
-      const response = await Axios.post(
-        `https://${process.env.REACT_APP_HOST}/api/cardCorporationList`
-      );
+      const response = await Axios.post(`/api/cardCorporationList`);
       setCorporationCList(response.data);
     } catch (error) {
       // 에러 처리
@@ -96,80 +71,11 @@ const Main = () => {
     }
   }
 
-  // const cardCorpList = async () => {
-  //   try {
-  //     const newDataList = [];
-  //     const snapshot = await firestore.collection("cardCo").get();
-  //     snapshot.forEach((doc) => {
-  //       newDataList.push(doc.data());
-  //     });
-  //     console.log("newDataList ===>", newDataList);
-  //     setCorporationCList(newDataList);
-
-  //     // return newDataList;
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-
-  // }, [corporationCList]);
-
-  // const [cardCorpListDone, setCardCorpListDone] = useState(false);
-
-  // const cardCorpList = async () => {
-  //   console.log("cardCorpList start!!");
-  //   try {
-  //     const newDataList = [];
-  //     const snapshot = await firestore.collection("cardCo").get();
-  //     snapshot.forEach((doc) => {
-  //       newDataList.push(doc.data());
-  //     });
-
-  //     // 상태 업데이트
-  //     // console.log("cardCorpListDone 1===>", cardCorpListDone);
-
-  //     setCorporationCList(newDataList);
-  //     // console.log("cardCorpListDone 2===>", cardCorpListDone);
-  //   } catch (error) {
-  //     console.error("데이터를 가져오는 중 오류 발생:", error);
-  //   }
-  // };
   useEffect(() => {
-    // console.log("useEffect => [] start ");
+    console.log("callIndexFun !!!!");
+    callIndexFun();
     cardCorpList();
-    // console.log("useEffect => [] end ");
   }, []);
-  // const loadData = async () => {
-  //   try {
-  //     const newDataList = await cardCorpList();
-  //     console.log(" newDataList ===>", newDataList);
-  //     console.log("corporationCList ====>", corporationCList);
-  //   } catch (error) {
-  //     console.error("Error loading data:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   // cardCorpList();
-  // }, []);
-
-  // useEffect(() => {
-  //   cardCorpList();
-  //   // const fetchData = async () => {
-  //   //   try {
-  //   //     const newDataList = await cardCorpList();
-  //   //     console.log("newDataList ===>", newDataList);
-  //   //     setCorporationCList((prevList) => [...prevList, ...newDataList]);
-  //   //     console.log("corporationCList ====>", corporationCList);
-  //   //   } catch (error) {
-  //   //     console.error("Error loading data:", error);
-  //   //   }
-  //   // };
-
-  //   // fetchData();
-  // }, []); // 빈 배열을 전달하여 컴포넌트가 처음 마운트될 때만 실행되도록 설정
 
   // ----------------------------------------------------------------------------------------
 
@@ -202,7 +108,6 @@ const Main = () => {
   };
 
   useEffect(() => {
-    // console.log("[initialRender] ====");
     if (initialRender) {
       randomCard();
       setInitialRender(false);
@@ -210,7 +115,6 @@ const Main = () => {
   }, [initialRender]);
 
   useEffect(() => {
-    // console.log("[randomC, initialRender] ====");
     if (!initialRender) {
       randomC.forEach((item) => {
         const imgElement = new Image();
@@ -233,15 +137,13 @@ const Main = () => {
     // }, [initialRender]);
   }, [randomC, initialRender]);
 
-  const slideInterval = 200; // 슬라이드 간격 (5초)
-  // const slideInterval = 250; // 슬라이드 간격 (5초)
-  const slideWidth = 320; // 슬라이드 너비 (이미지의 가로 크기에 따라 조절)
+  const slideInterval = 200;
+  const slideWidth = 320;
   const containerWidth = randomC.length * slideWidth;
   const [backTitle, setBackTitle] = useState(false);
   const [aniDone, setAniDone] = useState(false);
   useEffect(() => {
     const slideCount = randomC.length + 16;
-    // const slideCount = randomC.length + 12;
     let slideTimer;
     if (currentIndex > 22) setBackTitle(true);
     slideTimer = setInterval(() => {
@@ -258,35 +160,6 @@ const Main = () => {
       clearInterval(slideTimer);
     };
   }, [currentIndex, randomC]);
-
-  // useEffect(() => {
-  //   if (aniDone) {
-  //     // cardCorpList();
-  //   }
-  // }, [aniDone]);
-  // const cardRef = useRef(null);
-  // let rotation = 0; // 초기 회전각
-
-  // requestAnimationFrame을 사용하여 회전 애니메이션 만들기
-  // const animate = () => {
-  //   rotation += 1.3; // 회전각 증가
-  //   const transformValue = `rotateY(${rotation}deg)`;
-  //   if (cardRef.current) {
-  //     cardRef.current.style.transform = transformValue;
-  //     requestAnimationFrame(animate);
-  //   }
-  // };
-  // useEffect(() => {
-  //   if (aniDone) {
-  //     animate();
-  //   } else {
-  //     cancelAnimationFrame(animate);
-  //   }
-
-  //   return () => {
-  //     cancelAnimationFrame(animate);
-  //   };
-  // }, [aniDone]);
 
   return (
     <div className="main-container">
@@ -344,20 +217,6 @@ const Main = () => {
                 </p>
               </div>
               <div className="rightS">
-                {/* <div
-                  className="scrollableContainer"
-                  style={{
-                    width: `400px`,
-                  }}
-                >
-                  <div className="rightCardBox" ref={cardRef}>
-                    <div className="imgBox">
-                      <div className="cardImgBox">
-                        <img src={qm} alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
                 <div className="css-panjmq e5qlt9k3">
                   <div className="tossteam-video-1ipix51">
                     <video
