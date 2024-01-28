@@ -60,6 +60,7 @@ const Main = () => {
       throw error;
     }
   }
+
   async function cardCorpList() {
     try {
       const response = await Axios.post(`/api/cardCorporationList`);
