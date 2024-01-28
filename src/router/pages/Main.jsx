@@ -52,7 +52,9 @@ const Main = () => {
 
   async function randomCard() {
     try {
-      const response = await Axios.post(`/api/randomCard`);
+      const response = await Axios.post(`/api/randomCard`, {
+        withCredentials: true,
+      });
       setRandC(response.data);
     } catch (error) {
       // 에러 처리
@@ -61,16 +63,25 @@ const Main = () => {
     }
   }
 
-  async function cardCorpList() {
+  // async function cardCorpList() {
+  //   try {
+  //     const response = await Axios.post(`/api/cardCorporationList`);
+  //     setCorporationCList(response.data);
+  //   } catch (error) {
+  //     // 에러 처리
+  //     console.error("API Error:", error.message);
+  //     throw error;
+  //   }
+  // }
+  const cardCorpList = async () => {
     try {
-      const response = await Axios.post(`/api/cardCorporationList`);
-      setCorporationCList(response.data);
-    } catch (error) {
-      // 에러 처리
-      console.error("API Error:", error.message);
-      throw error;
+      await Axios.get(`/api/cardCorporationList`).then((response) => {
+        setCorporationCList(response.data);
+      });
+    } catch (e) {
+      console.log("getcardBenefit ERROR 데이터를 받아올 수 없습니다.");
     }
-  }
+  };
 
   useEffect(() => {
     console.log("callIndexFun !!!!");
