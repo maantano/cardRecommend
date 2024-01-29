@@ -52,9 +52,12 @@ const Main = () => {
 
   async function randomCard() {
     try {
-      const response = await Axios.post(`/api/randomCard`, {
-        withCredentials: true,
-      });
+      const response = await Axios.post(
+        `http://ec2-54-196-21-172.compute-1.amazonaws.com/api/randomCard`,
+        {
+          withCredentials: true,
+        }
+      );
       setRandC(response.data);
     } catch (error) {
       // 에러 처리
@@ -65,7 +68,9 @@ const Main = () => {
 
   async function cardCorpList() {
     try {
-      const response = await Axios.post(`/api/cardCorporationList`);
+      const response = await Axios.post(
+        `http://ec2-54-196-21-172.compute-1.amazonaws.com/api/cardCorporationList`
+      );
       setCorporationCList(response.data);
     } catch (error) {
       // 에러 처리
