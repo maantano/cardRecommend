@@ -63,25 +63,16 @@ const Main = () => {
     }
   }
 
-  // async function cardCorpList() {
-  //   try {
-  //     const response = await Axios.post(`/api/cardCorporationList`);
-  //     setCorporationCList(response.data);
-  //   } catch (error) {
-  //     // 에러 처리
-  //     console.error("API Error:", error.message);
-  //     throw error;
-  //   }
-  // }
-  const cardCorpList = async () => {
+  async function cardCorpList() {
     try {
-      await Axios.get(`/api/cardCorporationList`).then((response) => {
-        setCorporationCList(response.data);
-      });
-    } catch (e) {
-      console.log("getcardBenefit ERROR 데이터를 받아올 수 없습니다.");
+      const response = await Axios.post(`/api/cardCorporationList`);
+      setCorporationCList(response.data);
+    } catch (error) {
+      // 에러 처리
+      console.error("API Error:", error.message);
+      throw error;
     }
-  };
+  }
 
   useEffect(() => {
     console.log("callIndexFun !!!!");
