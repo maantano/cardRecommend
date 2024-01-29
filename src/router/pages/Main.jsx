@@ -65,9 +65,7 @@ const Main = () => {
 
   async function cardCorpList() {
     try {
-      const response = await Axios.post(
-        `https://ec2-52-79-202-92.ap-northeast-2.compute.amazonaws.com/api/cardCorporationList`
-      );
+      const response = await Axios.post(`/api/cardCorporationList`);
       setCorporationCList(response.data);
     } catch (error) {
       // 에러 처리
