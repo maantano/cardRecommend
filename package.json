@@ -54,7 +54,7 @@
     "xlsx": "^0.18.5",
     "zustand": "^4.4.1"
   },
-  "proxy": "https://maantano.site:9000",
+  "proxy": "http://ec2-52-79-202-92.ap-northeast-2.compute.amazonaws.com:9000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
