@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://ec2-52-79-202-92.ap-northeast-2.compute.amazonaws.com/:path*"
+      "destination": "https://maantano.site/:path*"
     },
     {
       "source": "/api/:path*/",
-      "destination": "https://ec2-52-79-202-92.ap-northeast-2.compute.amazonaws.com/:path*/"
+      "destination": "https://maantano.site/:path*/"
     }
   ]
 }
